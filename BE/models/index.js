@@ -1,11 +1,13 @@
 const sequelize = require("../config/database");
-const User = require("./customer")(sequelize);
-const Origin = require("./origin")(sequelize);
-const Product = require("./product")(sequelize);
-const Customer = require("./customer")(sequelize);
-const Supplier = require("./supplier")(sequelize);
-const Categories = require("./categories")(sequelize);
-const SupplierProduct = require("./supplierProduct")(sequelize);
+const { Sequelize, DataTypes } = require("sequelize");
+
+const User = require("./user")(sequelize, DataTypes);
+const Origin = require("./origin")(sequelize, DataTypes);
+const Product = require("./product")(sequelize, DataTypes);
+const Customer = require("./customer")(sequelize, DataTypes);
+const Supplier = require("./supplier")(sequelize, DataTypes);
+const Categories = require("./categories")(sequelize, DataTypes);
+const SupplierProduct = require("./supplierProduct")(sequelize, DataTypes);
 
 // Relationships
 Supplier.belongsTo(Origin, { foreignKey: "o_id" });

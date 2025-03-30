@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: { type: DataTypes.STRING, allowNull: false },
     category_id: {
       type: DataTypes.INTEGER,
-      references: { model: "Categories", key: "id" },
+      references: { model: "category", key: "id" },
     },
   });
   return Product;

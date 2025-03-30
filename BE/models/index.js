@@ -6,13 +6,13 @@ const Origin = require("./origin")(sequelize, DataTypes);
 const Product = require("./product")(sequelize, DataTypes);
 const Customer = require("./customer")(sequelize, DataTypes);
 const Supplier = require("./supplier")(sequelize, DataTypes);
-const Categories = require("./categories")(sequelize, DataTypes);
+const Category = require("./category")(sequelize, DataTypes);
 const SupplierProduct = require("./supplierProduct")(sequelize, DataTypes);
 
 // Relationships
 Supplier.belongsTo(Origin, { foreignKey: "o_id" });
 User.belongsTo(Customer, { foreignKey: "customer_id" });
-Product.belongsTo(Categories, { foreignKey: "category_id" });
+Product.belongsTo(Category, { foreignKey: "category_id" });
 Supplier.belongsToMany(Product, { through: SupplierProduct });
 Product.belongsToMany(Supplier, { through: SupplierProduct });
 
@@ -28,6 +28,6 @@ module.exports = {
   Supplier,
   Customer,
   sequelize,
-  Categories,
+  Category,
   SupplierProduct,
 };

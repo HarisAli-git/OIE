@@ -2,6 +2,10 @@
 const { Categories } = require("../models");
 
 exports.getAllCategories = async (req, res) => {
-  const categories = await Categories.findAll();
-  res.json(categories);
+  try {
+    const categories = await Categories.findAll();
+    res.json(categories);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };

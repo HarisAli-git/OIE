@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchProducts, Product } from "@/services/productService";
+import { fetchProducts } from "@/services/index";
 
 export default function ProductPage() {
   const [products, setProducts] = useState([]);

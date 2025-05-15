@@ -1,8 +1,8 @@
 // components/layout/Layout.js
-import Sidebar from "./sidebar";
+import Sidebar from "./siderbar";
 import Header from "./header";
-import { useAuth } from "../../contexts/AuthContext";
-import { useRouter } from "next/router";
+import { useAuth } from "../../contexts/auth";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Layout({ children, pageTitle }) {

@@ -1,7 +1,8 @@
 "use client"; // Add this line
 
+import { useEffect } from "react";
 import { useState } from "react";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/auth";
 import { useRouter } from "next/navigation"; // Update this import
 import * as Yup from "yup";
 

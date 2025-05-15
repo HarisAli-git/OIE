@@ -1,6 +1,6 @@
 "use client";
 
-import { AuthProvider } from "../contexts/AuthContext";
+import { AuthProvider } from "../contexts/auth";
 // Import other providers here if you have them
 
 export function Providers({ children }) {

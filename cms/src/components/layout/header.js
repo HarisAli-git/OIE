@@ -1,5 +1,5 @@
 // components/layout/Header.js
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/auth";
 
 export default function Header({ pageTitle }) {
   const { logout } = useAuth();

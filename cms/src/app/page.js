@@ -1,4 +1,4 @@
-// pages/_app.js
+// app/page.js
 "use client";
 
 import { AuthProvider } from "../contexts/auth";

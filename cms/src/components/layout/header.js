@@ -1,4 +1,6 @@
 // components/layout/Header.js
+"use client";
+
 import { useAuth } from "../../contexts/auth";
 
 export default function Header({ pageTitle }) {

@@ -1,4 +1,6 @@
 // components/product/ProductForm.js
+"use client";
+
 import { useState, useEffect } from "react";
 import * as Yup from "yup";
 import { dummyFetch, mockCategoriesData } from "../../lib/dummyApi"; // Using mockCategoriesData directly for simplicity

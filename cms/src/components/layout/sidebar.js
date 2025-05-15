@@ -1,6 +1,7 @@
 // components/layout/Sidebar.js
+"use client";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard Home" },
@@ -13,7 +14,7 @@ const navItems = [
 ];
 
 export default function Sidebar() {
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <aside className="w-64 bg-gray-800 text-white p-6 space-y-4 min-h-screen">
@@ -25,9 +26,9 @@ export default function Sidebar() {
               <Link href={item.href}>
                 <span
                   className={`block p-2 rounded hover:bg-gray-700 ${
-                    router.pathname === item.href ||
+                    pathname === item.href ||
                     (item.href !== "/dashboard" &&
-                      router.pathname.startsWith(item.href))
+                      pathname.startsWith(item.href))
                       ? "bg-gray-700 font-semibold"
                       : ""
                   }`}

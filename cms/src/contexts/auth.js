@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (email, password) => {
     // Mock login - in a real app, you'd call an API
-    if (email === "admin@example.com" && password === "password") {
+    if (email === "admin@gmail.com" && password === "password") {
       setIsAuthenticated(true);
       localStorage.setItem("cms_auth_token", "mock_token"); // Store a mock token
       router.push("/dashboard");

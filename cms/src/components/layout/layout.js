@@ -1,5 +1,7 @@
 // components/layout/Layout.js
-import Sidebar from "./siderbar";
+"use client";
+
+import Sidebar from "./sidebar";
 import Header from "./header";
 import { useAuth } from "../../contexts/auth";
 import { useRouter } from "next/navigation";

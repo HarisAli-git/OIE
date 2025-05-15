@@ -2,7 +2,7 @@
 
 import Sidebar from "../../components/layout/sidebar";
 import Header from "../../components/layout/header";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/auth";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect } from "react";
 

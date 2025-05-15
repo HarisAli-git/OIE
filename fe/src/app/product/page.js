@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { fetchProducts } from "@/services/index";
+import SearchBar from "@/components/searchbar/searchbar";
 
 export default function ProductPage() {
   const [products, setProducts] = useState([]);
@@ -16,6 +17,7 @@ export default function ProductPage() {
 
   return (
     <div className="min-h-screen bg-green-100 p-6">
+      <SearchBar />
       <div className="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg">
         <h1 className="text-3xl font-bold mb-4 text-center">Product List</h1>
         {loading ? (

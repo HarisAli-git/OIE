@@ -1,10 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import ProductForm from "../../../components/product/ProductForm";
-import Link from "next/link";
 import { dummyFetch } from "../../../lib/dummyApi";
+import ProductForm from "../../../../components/product/form";
 
 export default function EditProductPage() {
   const router = useRouter();

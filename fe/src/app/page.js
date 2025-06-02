@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/navbar/navbar";
 import { useRouter } from "next/navigation";
+import ProductPage from "./product/page";
 
 export default function Home() {
   const router = useRouter();
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     <>
       <div className="flex h-screen items-center justify-center bg-gray-100">
-        <div className="p-8 bg-white shadow-lg rounded-xl text-center">
+        {/* <div className="p-8 bg-white shadow-lg rounded-xl text-center">
           <h1 className="text-2xl font-bold mb-6">
             Are you a User or a Customer?
           </h1>
@@ -26,7 +27,8 @@ export default function Home() {
               Customer
             </button>
           </div>
-        </div>
+        </div> */}
+        <ProductPage />
       </div>
     </>
   );

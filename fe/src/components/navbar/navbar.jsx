@@ -12,7 +12,7 @@ export default function Navbar() {
         <Link href="#">Pricing</Link>
       </div>
       <div className="space-x-4">
-        <Link href="#">Login</Link>
+        <Link href="/login">Login</Link>
         <button className="bg-orange-600 px-4 py-2 rounded-full font-semibold">Free Trial</button>
       </div>
     </nav>

@@ -9,18 +9,19 @@ export default function ProductPage() {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
   const limit = 5;
 
   useEffect(() => {
     setLoading(true);
-    fetchProducts(currentPage, limit)
+    fetchProducts(currentPage, limit, searchQuery)
       .then((data) => {
         setProducts(data.products || []);
         setTotalPages(data.totalPages || 1);
       })
       .catch(console.error)
       .finally(() => setLoading(false));
-  }, [currentPage]);
+  }, [currentPage, searchQuery]);
 
   const handleNext = () => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
@@ -32,7 +33,7 @@ export default function ProductPage() {
 
   return (
     <div className="min-h-screen p-6">
-      <SearchBar />
+      <SearchBar setSearchQuery={setSearchQuery} />
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg">
         {loading ? (
           <p className="text-center text-gray-500">Loading...</p>

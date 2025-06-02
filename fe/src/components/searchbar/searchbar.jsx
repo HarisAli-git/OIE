@@ -1,7 +1,7 @@
 // components/SearchBar.js
 import { useState } from 'react';
 
-export default function SearchBar() {
+export default function SearchBar({setSearchQuery}) {
   const [selectedOption, setSelectedOption] = useState('Company');
   const [inputValue, setInputValue] = useState('');
 
@@ -10,6 +10,16 @@ export default function SearchBar() {
     Product: 'Enter The Product',
     HSCode: 'Enter The HS Code'
   };
+
+  const handleSearch = () => {
+    if (selectedOption === "Company") {
+      return
+    } else if (selectedOption === "Product") {
+      setSearchQuery(`description=${inputValue}`)
+    } else {
+      setSearchQuery(`pct_code=${inputValue}`)
+    }
+  }
 
   return (
     <div className="bg-black text-white p-4 rounded-md mt-10 flex items-center max-w-4xl mx-auto">
@@ -31,7 +41,7 @@ export default function SearchBar() {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button className="bg-blue-700 hover:bg-blue-800 px-6 py-2 rounded-md font-bold">SEARCH</button>
+      <button onClick={handleSearch} className="bg-blue-700 hover:bg-blue-800 px-6 py-2 rounded-md font-bold">SEARCH</button>
     </div>
   );
 }

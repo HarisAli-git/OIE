@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const fetchProducts = async () => {
+export const fetchProducts = async (page, limit) => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/product`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/product?page=${page}&limit=${limit}`
     );
     return response.data;
   } catch (err) {
